@@ -11,15 +11,10 @@ const Trending = () => {
   }, []);
 
   return (
-    <div className="trending-items">
-      {items.map(item => (
-        <div key={item._id} className="item-card">
-          <img src={item.imageUrl} alt={item.name} />
-          <h3>{item.name}</h3>
-          <p>{item.description}</p>
-        </div>
-      ))}
-    </div>
+
+<div>
+  
+</div>
   );
 };
 

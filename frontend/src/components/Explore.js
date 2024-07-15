@@ -25,8 +25,10 @@ const options = {
 
 
 
-const Explore = () => {
-  const [clothes, setClothes] = useState([]);
+
+  const Explore = () => {
+    const [clothes, setClothes] = useState([]);
+    const [showFooter, setShowFooter] = useState(false); // Add this state variable
 
   useEffect(() => {
     const fetchClothes = async () => {
@@ -44,28 +46,66 @@ const Explore = () => {
       }
     };
 
+    
     fetchClothes();
   }, []); // Empty dependency array ensures useEffect runs once
 
   return (
     <div className="explore">
-      <h2>Explore Fashion</h2>
-      <div className="clothes-grid">
-        {clothes.map(cloth => (
-          <div key={cloth.id} className="cloth-card">
-            {/* Adjust image URL and other data properties based on API response */}
-            <img src={cloth.media.images[0].smallUrl} alt={cloth.name} />
-            <div className="cloth-details">
-              <h3>{cloth.name}</h3>
-              <p>Price: {cloth.price.formatted}</p>
-              <p>Brand: {cloth.brand.name}</p>
-              {/* Adjust sizeInfo handling based on API response structure */}
-              <p>Available sizes: {cloth.sizeInfo.filter(size => size.available).map(size => size.name).join(', ')}</p>
-            </div>
-          </div>
-        ))}
+      <h5>Explore Fashion</h5>
+      <div class="instagram-feed-container">
+     <div class="instagram-feed-header">
+    
+    <h2></h2>
+  </div>
+  <div class="instagram-feed-posts">
+  <div class="container">
+  <div class="row">
+    <div class="col-sm pt-2">
+    <div class="instagram-post">
+      <img src="WhatsApp Image 2024-07-14 at 8.40.40 PM (1).jpeg" alt="Post 1 Image" />
+      <div class="instagram-post-info">
+        <p>Post 1 Caption</p>
+        <i class="icosn1 fa fa-thumbs-up" ><span class="h6 text-dark">12 likes</span></i>
       </div>
     </div>
+    </div>
+    <div class="col-sm pt-2">
+    <div class="instagram-post">
+      <img src="WhatsApp Image 2024-07-14 at 8.40.38 PM.jpeg" alt="Post 1 Image" />
+      <div class="instagram-post-info">
+        <p>Post 1 Caption</p>
+        <i class="icosn1 fa fa-thumbs-up" ><span class="h6 text-dark">12 likes</span></i>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm pt-3">
+    <div class="instagram-post">
+      <img src="WhatsApp Image 2024-07-14 at 8.48.26 PM (1).jpeg" alt="Post 1 Image" />
+      <div class="instagram-post-info">
+        <p>Post 1 Caption</p>
+        <i class="icosn1 fa fa-thumbs-up" ><span class="h6 text-dark">12 likes</span></i>
+      </div>
+    </div>
+    </div>
+    <div class="col-sm pt-3">
+    <div class="instagram-post">
+      <img src="WhatsApp Image 2024-07-14 at 8.40.40 PM.jpeg" alt="Post 1 Image" />
+      <div class="instagram-post-info">
+        <p>Post 1 Caption</p>
+        <i class="icosn1 fa fa-thumbs-up" ><span class="h6 text-dark">12 likes</span></i>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+    </div>    
   );
 };
 
